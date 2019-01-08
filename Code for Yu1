@@ -1,0 +1,241 @@
+if 条件实例
+注意缩进和冒号
+
+
+#!/usr/bin/env python
+#coding:utf-8
+#求1-2+3-4+5....99的所有数的和
+count = 1
+sum = 0
+while count < 100:
+  temp = count % 2
+if temp == 0:
+  sum = sum - count
+else:
+  sum = sum + count
+  count = count + 1
+print(sum)
+
+
+#!/usr/bin/env python
+#coding:utf-8
+#求1-100所有偶数
+
+count = 1
+while count < 101:
+  result = count % 2
+if result == 0:
+  print count
+else:
+  pass
+  count = count + 1
+
+
+#!/usr/bin/env python
+#coding:utf-8
+#求1-100所有数的和
+count = 1
+sum = 0 
+while count < 101:
+  sum = count + sum
+  count = count + 1
+print(sum)
+
+
+课堂练习
+#coding:utf-8
+#输入两个数，并按大小顺序输出
+a=int(input("请输入一个数a:"))
+b=int(input("请输入一个数b:"))
+if a>b:
+    print(a,b)
+else:
+    print(b,a)
+
+
+#coding:utf-8
+#判断年份是否为闰年
+a=int(input("请输入一个年份:"))
+b=a%4
+if b == 0:
+    print("%d是润年" % a)
+else:
+    print("%d不是润年" % a)
+
+
+Python3 格式化输出 %s & %d 等
+指定占位符宽度（左对齐）
+print ("Name:%-10s Age:%-8d Height:%-8.2f"%("Alfred",25,1.70))
+#输出效果：
+Name:Alfred   Age:25    Height:1.70
+
+字符串格式化代码：
+格式	描述
+%%	百分号标记
+%c	字符及其ASCII码
+%s	字符串
+%d	有符号整数(十进制)
+%u	无符号整数(十进制)
+%o	无符号整数(八进制)
+%x	无符号整数(十六进制)
+%X	无符号整数(十六进制大写字符)
+%e	浮点数字(科学计数法)
+%E	浮点数字(科学计数法，用E代替e)
+%f	浮点数字(用小数点符号)
+%g	浮点数字(根据值的大小采用%e或%f)
+%G	浮点数字(类似于%g)
+%p	指针(用十六进制打印值的内存地址)
+%n	存储输出字符的数量放进参数列表的下一个变量中
+
+
+
+
+循环实例
+课堂练习
+#coding:utf-8
+#计算 1 到 100 的总和
+n = 100
+sum = 0
+count = 1
+while count <= n:
+    sum = sum + count
+    count += 1
+print("1 到 %d 之和为: %d" % (n,sum))
+
+
+#coding:utf-8
+#计算 1 到 100 的总和
+sum = 0
+for count in range (0,101):
+    sum = sum + count
+    count += 1
+print("1 到 %d 之和为: %d" % (n,sum))
+
+
+#coding:utf-8
+#计算 100!：
+sum = 1
+count=1
+while count <=100:
+    sum = sum * count
+    count += 1
+print("100!为: %d" % (sum))
+
+
+#coding:utf-8
+#设置无限循环
+var = 1
+while var == 1 :  # 表达式永远为 true
+   num = int(input("输入一个数字:"))
+   print ("你输入的数字是: ", num)
+print ("Good bye!")
+
+
+#coding=utf-8
+#从控制台输入一个数，判断是否是质数
+a=int(input('请输入一个数字:'))
+if a<=1:
+    print('这不是质数')
+elif a==2:
+    print('这是一个质数!')
+else:
+    i=2
+    while i<a:
+        if a%i==0:
+            print('这不是一个质数')
+            print(i,"乘以",a//i,"是",a)
+            break
+        i=i+1
+    else:
+        print ('这是一个质数!')
+
+
+#coding=utf-8
+#逢7过游戏
+num = 1
+while num <= 99:
+    num = num + 1
+    if (num % 7 == 0) or (num % 10 == 7) or (num // 10 == 7):
+        continue
+    else:
+        print(num)
+
+
+#九九乘法表
+#coding=utf-8
+#九九乘法表
+for i in range(1, 10):
+    for j in range(1, i+1):                #避免重复
+        print("%d * %d = %d\t" % (i, j, i*j),end=" ") #\t表示制表符，让结果更整齐，end加上空格，让结果更美观
+    print() #内循环强制换行，并开始下一行输出
+
+
+for i in range(1, 10):
+    for j in range(1, i+1):                #避免重复
+        print(str(i) + "×" + str(j) + "=" + str(i*j),end = "    ") #参见print方法
+    print("")
+
+
+Turtle画图
+#五角星
+#coding=utf-8
+import turtle
+turtle.goto(0,0)
+turtle.pendown()
+for i in range(5):
+    turtle.forward(200)
+    turtle.left(144)
+turtle.done()
+
+
+
+#画同心圆
+# coding=utf-8
+from turtle import *#这一步可以省略需要重复写的turtle指令
+
+#以下是对画笔的基本设置
+color("green")
+pensize(8)
+speed(10)
+
+#设置一个循环，这样画笔可以一直画下去
+for i in range(1,7):
+    penup()
+    goto(0,-40*i)
+    pendown()
+    circle(i*40)
+done()
+
+
+
+#1234能组成多少3位数
+for x in range(1,5):
+     for y in range(1,5):
+         for z in range(1,5):
+                 if (x!=y) and (y!=z) and (z!=x):
+                         print("%d%d%d" % (x, y, z))
+   
+figs=["1","2","3","4"]
+num1=[]
+for a in figs:
+  for b in figs；
+    for c in figs:
+      if a!=b and b!=c and a!=c:
+        num2=a+b+c
+        num1.append(int(num2))
+print("There are",len(num1),"numbers")
+print(num1)
+
+
+You can't name:
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+File Reading and Writing:
+f=open(‘URL’, ‘MODE’, ‘CODING’, ‘ERRORS’)
+e.g：
+f = open(’/Usersiccy/Desktop/PythonCode/test.txt’,‘r’, encoding=‘UTF-8’, errors=‘ignore’)
+
+f.read()  一次性读取文件的全部内容
+f.readline(n) 读取n个字符的内容
+f.readlines() 一次读取文件的全部内容，并按行返回list
+f.write(‘写的内容’)
