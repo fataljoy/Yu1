@@ -61,6 +61,16 @@ if b == 0:
     print("%d是润年" % a)
 else:
     print("%d不是润年" % a)
+    
+#"encoding=utf-8"
+#输入3个数，按大小输出
+list1=[]
+for i in range(1,4):
+    x=int(input('int%d: '%(i)))
+    list1.append(x)
+print(sorted(list1))
+
+
 
 
 Python3 格式化输出 %s & %d 等
@@ -239,3 +249,11 @@ f.read()  一次性读取文件的全部内容
 f.readline(n) 读取n个字符的内容
 f.readlines() 一次读取文件的全部内容，并按行返回list
 f.write(‘写的内容’)
+
+#"encoding=utf-8"
+#输入3个数，并进行排序
+list=[]
+for i in range(3):
+    x=int(input('int%d: '%(i)))
+    list.append(x)
+print(sorted(list))
